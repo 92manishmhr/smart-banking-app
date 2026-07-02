@@ -1,17 +1,20 @@
-# 🎓 Trainee Assignment: Deploy to OpenShift
+# Week 8 / Session 3 - Deploy micro-service to OpenShift
 
 Deploy this application to your OpenShift cluster using **Import from Git**,
 then complete the access-control task.
 
 ## Part 1 — Project
 
-Create a project for the application:
+Create a project "YOUR-NAME_smart-ai-bank" from web UI or via OC:
 
-```bash
-oc new-project smart-ai-bank
+```
+oc new-project devesh-smart-ai-bank
 ```
 
-## Part 2 — PostgreSQL
+<img width="2260" height="1234" alt="Screenshot 2026-07-02 at 1 00 10 PM" src="https://github.com/user-attachments/assets/cb23b070-e207-40be-a6dc-24c817546f0e" />
+
+
+## Part 2 — Provision Database - PostgreSQL
 
 Create a Secret holding the database configuration (the backend reads these
 exact keys as environment variables):
@@ -25,8 +28,8 @@ oc create secret generic bank-db-secret \
   --from-literal=DB_PASSWORD=bankpass
 ```
 
-Deploy PostgreSQL (image `postgres:16-alpine`) and expose it as a Service named
-`db` on port 5432, with the Postgres environment variables set from the values
+Deploy PostgreSQL using Software Catalog.
+
 in the Secret:
 
 ```bash
