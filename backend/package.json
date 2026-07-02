@@ -1,0 +1,18 @@
+{
+  "name": "smart-ai-bank-backend",
+  "version": "1.0.0",
+  "description": "Smart AI Bank - REST API backend (training demo, not production software)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "migration": "node migrate.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
